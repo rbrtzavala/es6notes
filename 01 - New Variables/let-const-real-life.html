@@ -6,17 +6,29 @@
 </head>
 <body>
 <script>
+  // name here is block scoped
   {
-    const name = 'wes';
-    console.log(name);
+    const name = 'kieze';
   }
 
-  for(let i = 0; i < 10; i++) {
+  // var i here becomes a global var with a
+  // reassigned value of last iteration
+  for (var i = 0; i < 10; i++) {
+    // console.log(i);
+    setTimeout(function() {
+      console.log(`The number is ${i}`);
+    }, 1000);
+  }
+
+  // here, let is block scoped
+  // each iteration is a new declaration
+  for (let i = 0; i < 10; i++) {
     console.log(i);
     setTimeout(function() {
-      console.log('The number is ' + i);
-    },1000);
+      console.log(`The number is ${i}`);
+    }, 1000);
   }
+
 
 </script>
 </body>

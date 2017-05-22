@@ -6,8 +6,29 @@
 </head>
 <body>
 <script>
-  console.log(pizza);
-  const pizza = 'Deep Dish 🍕🍕🍕';
+  // var variabledeclaratin is hoisted to top of scope
+  console.log({pizza0});
+
+  // Temporal Dead Zone
+  // let and const cannot be accessed before defined
+  console.log({pizza1});
+  console.log({pizza2});
+
+  var pizza0 = 'Deep dish 🍕';
+  let pizza1 = 'Deep dish 🍕🍕';
+  const pizza2 = 'Deep dish 🍕🍕🍕';
+
+  console.log({pizza0, pizza1, pizza2});
+
+  // Rule of thumb
+  // 1. use const by default
+  // 2. only use let if rebinding is needed
+  // 3. var shouldn't be used in es6
+
+  // Kyle Simposon's take
+  // 1. Use var for top-level variables shared across many scopes.
+  // 2. Use let for localized variables in smaller scopes.
+  // 3. Refactor let to const only after some code has been written and reasonably sure you have a case where there isn't reassignment.
 
 </script>
 </body>

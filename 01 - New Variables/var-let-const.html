@@ -6,18 +6,24 @@
 </head>
 <body>
 <script>
-  function setWidth() {
+  // var variables can be reassigned and updated.
+  //var variables are function scoped
+  (function setWidth() {
     var width = 100;
     console.log(width);
-  }
-  setWidth();
+  }());
+  // width = 'xyz';
+  // console.log(width);
 
   var age = 100;
-  if(age > 12) {
-    const dogYears = age * 7;
+  if (age > 12) {
+    // var here is not in a function so is global scoped
+    var dogYears = age * 7;
     console.log(`You are ${dogYears} dog years old!`);
-  }
+  };
 
+
+  // let and const are block scoped
   let height = 200;
   const key = 'abc123';
 </script>

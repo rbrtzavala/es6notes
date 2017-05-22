@@ -10,12 +10,30 @@
   let points = 50;
   let winner = false;
 
-  const person = {
-    name: 'Wes',
-    age: 28
+  // let cannot be redeclared twice in the same scope
+  // let points = 60;
+  // points = 2450;  but can be update.
+
+  if (points > 40) {
+    // let in here is block scoped and considered\
+    // a different variable.
+    console.log('it ran');
+    let winner = true;
   }
 
-  const wes = Object.freeze(person);
+  // const variable cannot be reassigned
+  // key = 'xev789';
+
+  const dog = {
+    name: 'Kiezer',
+    age: 5
+  }
+
+  // Object properties can be updated
+  dog.age = 7;
+
+  // Object.freeze() will prevent value changes on variable
+  const Kiezr = Object.freeze(dog);
 
 </script>
 </body>
