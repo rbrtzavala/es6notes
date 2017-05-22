@@ -10,11 +10,22 @@
 const race = '100m Dash';
 const winners = ['Hunter Gath', 'Singa Song', 'Imda Bos'];
 
-const win = winners.map((winner, i) => ({name: winner, race, place: i + 1}));
+// If implicitly returning an object literal from a function
+// you should wrap the {} inside ().
+const win = winners.map((winner, i) => ({
+  name: winner,
+  // if key:value use the same term, can declsre once
+  // race: race
+  race,
+  place: i + 1
+}));
 
-const ages = [23,62,45,234,2,62,234,62,34];
+console.table(win);
 
-const old = ages.filter(age => age >= 60);
+const ages = [23, 74, 65, 12, 90, 38, 65, 75, 87, 34, 31, 101];
+// filter creates a new array of values where
+// condition is true
+const old = ages.filter(age => age>= 60);
 console.log(old);
 
 </script>

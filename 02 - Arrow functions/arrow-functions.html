@@ -6,29 +6,36 @@
 </head>
 <body>
 <script>
-  const names = ['wes', 'kait', 'lux'];
+  const names = ['kieze', 'puddles', 'snickers'];
 
-  const fullNames = names.map(function(name) {
-    return `${name} bos`;
+  const fullNames1 = names.map(function(name) {
+    return `${name} zav`
   });
 
+  // '=>' replaces the 'function' keyword
   const fullNames2 = names.map((name) => {
-    return `${name} bos`;
+    return `${name} nav`
   });
 
+  // if function only gets one arg, () not needed
   const fullNames3 = names.map(name => {
-    return `${name} bos`;
+    return `${name} dawg`
   });
 
-  const fullNames4 = names.map(name => `${name} bos`);
+  // Implicit return
+  // if func is only returning something,
+  // no need for {} nor the 'return' keyword
+  const fullNames4 = names.map(name => `${name} dog`);
 
-  const fullNames5 = names.map(() => `cool bos`);
+  // if func does not get an arg, use empty ()
+  const fullNames5 = names.map(() => `cool dogs`);
 
-  const sayMyName = (name) => {
-    alert(`Hello ${name}!`)
-  }
+  console.log(fullNames1, fullNames2, fullNames3, fullNames4, fullNames5);
 
-  sayMyName('Wes');
+  // Arrow functions are always anonymous
+  // but can be assigned to a variable
+  const sayMyName = (name) => { alert(`Hey ${name}!`)};
+  sayMyName('Kiezer!');
 
 </script>
 </body>
