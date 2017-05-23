@@ -22,8 +22,31 @@
     JS: 'JavaScript'
   };
 
-  const first = 'Wes';
-  const last = 'Bos';
+  function addAbreviations(strings, ...values) {
+    const abbreviated = values.map(value => {
+      if (dict[value]) {
+        return `
+          <abbr title="${dict[value]}">${value}</abbr>
+        `;
+      }
+      // if value is not in dict, just return.
+      return value;
+    });
+    // console.log(abbreviated);
+    return strings.reduce((sentence, string, i) => {
+      return `${sentence}${string}${abbreviated[i] || ''}`
+    }, '')
+  }
+
+  const first = 'Kieze';
+  const last = 'Papa 🐕';
+
+  const sentence = addAbreviations`Hello my name is ${first} ${last} and we out here! Doing ${'HTML'}, ${'CSS'}, ${'JS'}`;
+
+  const bio = document.querySelector('.bio');
+  const p = document.createElement('p');
+  p.innerHTML = sentence;
+  bio.appendChild(p);
 
 </script>
 </body>

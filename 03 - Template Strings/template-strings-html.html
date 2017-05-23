@@ -7,18 +7,19 @@
 <body>
 <script>
   const person = {
-    name: 'Wes',
+    name: 'Kieze 🐕',
     job: 'Web Developer',
-    city: 'Hamilton',
-    bio: 'Wes is a really cool guy that loves to teach web development!',
+    city: 'Albuquerque',
+    bio: 'Kieze digs diggin and harassing other dogs!',
   };
 
+  // Template strings allow multiple lines within the string.
+  // Helpful when building markup as a string,
+  // no worry f whitespace
   const markup = `
     <div class="person">
-      <h2>
-        ${person.name}
-        <span class="job">${person.job}</span>
-      </h2>
+      <h2>${person.name}</h2>
+      <span class="job">${person.job}</span>
       <p class="location">${person.city}</p>
       <p class="bio">${person.bio}</p>
     </div>

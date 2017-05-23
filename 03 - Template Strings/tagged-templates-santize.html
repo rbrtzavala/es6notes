@@ -17,16 +17,22 @@
   </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/0.8.2/purify.min.js"></script>
+
 <script>
+  // Must Sanitize data before injecting into the DOM.
   function sanitize(strings, ...values) {
-    const dirty = strings.reduce((prev, next, i) => `${prev}${next}${values[i] || ''}`, '');
+    // reduce over strings
+    const dirty = strings.reduce((prev, next, i) => `${prev}${next}${values[i] || ''}` , '');
+    // run through DOMPurify to prevent XSS attacks
     return DOMPurify.sanitize(dirty);
   }
 
-  const first = 'Wes';
-  const aboutMe = `I love to do evil <img src="http://unsplash.it/100/100?random" onload="alert('you got hacked');" />`;
 
-  const html = sanitize`
+  const first = 'Kieze 🐕';
+  // Tagged template to sanitize
+  const aboutMe = sanitize`I love to do evil <img src="http://unsplash.it/100/100?random" onload="alert('you got hacked');" />`;
+
+  const html = `
     <h3>${first}</h3>
     <p>${aboutMe}</p>
   `;

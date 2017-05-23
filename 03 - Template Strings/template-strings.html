@@ -8,8 +8,14 @@
 <script>
   const name = 'Snickers';
   const age = 2;
+
+  // Old Way of using strings and variables
+  const sentence0 = 'My dog ' + name + ' is ' + age + ' years old.';
+
+  // `` backticks denote a template string
+  // ${} injects JS into the string
   const sentence = `My dog ${name} is ${age * 7} years old.`;
-  console.log(sentence);
+  console.log(sentence0, sentence);
 
 </script>
 </body>

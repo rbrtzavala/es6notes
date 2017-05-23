@@ -5,26 +5,34 @@
   <title>Tagged Templates</title>
   <style>
     .hl {
-      background: #ffc600;
+      background: #0ff;
     }
   </style>
 </head>
 <body>
 <script>
+  // es6 Rest operator '...'
+  // takes in the rest of the arguments and puts them into
+  // an array to pass to the function.
   function highlight(strings, ...values) {
-    let str = '';
+    let str = ''; // use let, will be altering the value
     strings.forEach((string, i) => {
-      str += `${string} <span contenteditable class="hl">${values[i] || ''}</span>`;
+      // str += string + (values[i] || ''); // if no value, ''
+      str += `${string} <span conetenteditable class="hl">${values[i] || ''}</span>`;
     });
     return str;
   }
 
-  const name = 'Snickers';
+  const name = 'Kieze 🐕';
   const age = 100;
 
+  // Tagged Template
+  // put the name of the function in front of the Template
+  // String will tag the string to that function
   const sentence = highlight`My dog's name is ${name} and he is ${age} years old`;
+
+  // console.log(sentence);
   document.body.innerHTML = sentence;
-  console.log(sentence);
 
 </script>
 </body>

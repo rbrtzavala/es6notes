@@ -12,11 +12,14 @@
     featuring: 'Biggie Smalls'
   };
 
+  // Can use Ternary operators within ${}
+  // to return a nested template string if true
+  // or an empty string if false.
   const markup = `
     <div class="song">
       <p>
-        ${song.name} — ${song.artist}
-        ${song.featuring ? `(Featuring ${song.featuring})` : ''}
+        ${song.name} - ${song.artist}
+        ${song.featuring ? `(Featuring: ${song.featuring})` : ''}
       </p>
     </div>
   `;
