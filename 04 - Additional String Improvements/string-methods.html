@@ -15,16 +15,26 @@ const make = 'BMW';
 const model = 'x5';
 const colour = 'Royal Blue';
 
-// .startsWith()
+// New es6 String Methods
 
-// .endsWith()
+// .startsWith(x, y)
+// x is string to look for
+// y is how many chars to skip before look up
+console.log(course.startsWith('RFB')); // true
+console.log(flightNumber.startsWith('AC', 3)); // true
+
+// .endsWith() similar to startsWIth()
+console.log(flightNumber.endsWith('jz')); // true
+console.log(accountNumber.endsWith('RT', 11)); // true
 
 // .includes()
+// checks if strings is anywhere in it
+console.log(flightNumber.includes('ac')); // false, case-sensitive
 
-// .repeat()
-
+// .repeat(x)
+// will repeat string x number of times
 function leftPad(str, length = 20) {
-  return `→ ${' '.repeat(length - str.length)}${str}`;
+  return `▶️${' '.repeat(length - str.length)}${str}`;
 }
 
 console.log(leftPad(make));
