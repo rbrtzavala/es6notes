@@ -6,12 +6,15 @@
 </head>
 <body>
 <script>
-  let inRing = 'Hulk Hogan';
+  let inRing = 'Hulkster';
   let onSide = 'The Rock';
+  console.log(inRing);
 
-  console.log(inRing, onSide);
-  [inRing, onSide] = [onSide, inRing];
-  console.log(inRing, onSide);
+  // Creates an array and automatically destructures it
+  // so that values are swapped.
+  [ inRing, onSide ] = [ onSide, inRing ];
+  console.log(inRing);
+
 
 </script>
 </body>

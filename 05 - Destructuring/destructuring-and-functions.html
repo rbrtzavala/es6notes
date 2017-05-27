@@ -16,11 +16,25 @@
     return converted;
   }
 
-  function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
+  const hundo = convertCurrency(100);
+  console.log(hundo.AUD);
+  console.log(hundo.MEX);
+
+  // Destructured object from returned values :)
+  const { MEX, GPB,USD, AUD } = convertCurrency(100);
+  console.log(AUD);
+  console.log(MEX);
+
+  // Can pass a destructured object as
+  // argumenmt with default values.
+  function tipCalc({total, tip = 0.15, tax = 0.13} = {}) {
     return total + (tip * total) + (tax * total);
   }
 
-  const bill = tipCalc({ tip: 0.20, total: 200 });
+  // When a destructured object is passed to
+  // the function, items can be in any order
+  // and any args left out will refer to the default values.
+  const bill = tipCalc({ tax: 0.17, total: 200 });
   console.log(bill);
 
 </script>
